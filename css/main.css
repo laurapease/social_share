@@ -1,0 +1,112 @@
+/* CSS Variables */
+:root {
+  --base-font: "montserrat", sans-serif;
+  /* Social Colors */
+  --facebook: #3b5998;
+  --twitter: #55acee;
+  --instagram: #517fa4;
+  --linkedin: #0077b5;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background);
+  font-family: var(--base-font);
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light {
+  --background: #f1f1f1;
+  --background-alt: #dfe6e9;
+  --background-inverse: #2d3436;
+  --text-color: var(--background) ;
+  --text-color-inverse: var(--background-inverse);
+}
+
+.dark {
+  --background: #1f1f1f;
+  --background-alt: #2d3436;
+  --background-inverse: #f1f1f1;
+  --text-color: var(--background-sub);
+  --text-color-inverse: var(--background-inverse);
+}
+
+.share {
+  --button-width: 280px;
+  --button-height: 80px;
+  --button-raius: 20px;
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: var(--button-raius);
+  background: var(--background-alt);
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  cursor: pointer;
+  transition: transform .3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.share:hover {
+  transform: scale(1.2);
+}
+
+.share-cover {
+  background-color: var(--background-inverse);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  color: var(--text-color);
+  text-align: center;
+  line-height: var(--button-height);
+  border-radius: var(--button-raius);
+  font-size: 1.6em; /* 1em = 16px, 2em = 32px */
+  transition: transform .6s ease-in-out;
+  z-index: 2;
+}
+
+.share:hover .share-cover {
+  transform: translateX(-100%);
+}
+
+.share-icon {
+  flex: 1;
+  height: var(--button-height);
+  text-align: center;
+  line-height: var(--button-height);
+  font-size: 1.6em;
+  color: var(--text-color-inverse);
+  opacity: 0;
+  transition: opacity .6s linear;
+}
+
+.share .share-icon:hover {
+  color: var(--text-color);
+}
+
+.share:hover .share-icon {
+  opacity: 1;
+}
+
+.facebook:hover {
+  background: var(--facebook);
+}
+
+.twitter:hover {
+  background: var(--twitter);
+}
+
+.instagram:hover {
+  background: var(--instagram);
+}
+
+.linkedin:hover {
+  background: var(--linkedin);
+}
